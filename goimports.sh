@@ -1,6 +1,2 @@
 #!/bin/bash
-
-if [[ $1 == *.go ]]
-then
-  goimports -w $1
-fi
+goimports -w $(find . -type f -name '*.go' -not -path "./vendor/*")
